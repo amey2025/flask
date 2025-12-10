@@ -2,12 +2,12 @@
 Flask application deployment in k8s with fleet
 
 ## Create Docker image for flask ##
-docker build . -t  abhyankar/flask:latest
-docker run --rm -p 5000:5000 --name my-flask-app abhyankar/flask:latest
+docker build . -t  username/flask:latest
+docker run --rm -p 5000:5000 --name my-flask-app username/flask:latest
 
 ## image update to docker hub ##
 docker login
-docker push <user_name>/flask:latest
+docker push username/flask:latest
 
 ## Port forwarding to access the web service on port 5000 ##
 kubectl port-forward service/flask 5000:5000 --namespace=fleet
