@@ -81,10 +81,10 @@ Ensure Helm is installed on your local machine.
 To test the chart manually without Fleet:
 
 - Install
-    helm install flask-app ./flask-app/ --namespace fleet
+    `helm install flask-app ./flask-app/ --namespace fleet`
 
 - Uninstall
-    helm uninstall flask-app -n fleet
+    `helm uninstall flask-app -n fleet`
 
 ---
 
