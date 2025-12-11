@@ -71,6 +71,10 @@ Ensure Helm is installed on your local machine.
 ### Create and update the Helm chart
 - Go to the flask directory
 - helm create flask-app
+- Modify values.yaml and templates in flask/flask-app/ as needed
+- git add .
+- git commit -m "Update helm chart"
+- git push
 
 
 ### Manual Install/Uninstall
@@ -114,17 +118,12 @@ To test the chart manually without Fleet:
 ## Known Issues / Blockers
 
 **Status**:  
-- Fleet successfully deploys the Helm chart.
-- **Issue**: The Fleet deployment fails to create the Service resource for the Flask app.
+- Fleet is unable to deploy the Helm chart.
+- **Issue**: The Fleet deployment fails with error "authentication required: Repository not found"
 
 **Troubleshooting steps**:
-1. Verify `service.yaml` exists in the Helm chart `templates/` folder.
-2. Check `values.yaml` to ensure service creation is enabled.
-3. Review Fleet agent logs for permission errors or templating failures.
-
-- Modify values.yaml and templates in flask/flask-app/ as needed
-- git add .
-- git commit -m "Update helm chart"
-- git push
+1. kubectl get bundles.fleet.cattle.io -A
+2. kubectl describe gitrepo flask -n fleet-local
+3. Review Fleet agent logs from k9s tool
 
 
