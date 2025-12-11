@@ -98,19 +98,19 @@ To test the chart manually without Fleet:
 
 ### Useful Fleet commands
 - Check the status of the GitRepo
-    kubectl describe gitrepo flask-fleet -n fleet-local
+    `kubectl describe gitrepo flask-fleet -n fleet-local`
 
 - View Fleet bundles
-    kubectl get bundles.fleet.cattle.io -A
+    `kubectl get bundles.fleet.cattle.io -A`
 
 - Force update the Fleet configuration
-    kubectl replace -f ./fleet-gitrepo.yaml --force
+    `kubectl replace -f ./fleet-gitrepo.yaml --force`
 
 - Check Fleet Controller logs
-    kubectl logs -n cattle-fleet-system deploy/fleet-controller
+    `kubectl logs -n cattle-fleet-system deploy/fleet-controller`
 
 - Check Fleet Agent logs
-    kubectl logs -n cattle-fleet-system -l app=fleet-agent
+    `kubectl logs -n cattle-fleet-system -l app=fleet-agent`
 
 
 ---
@@ -119,7 +119,7 @@ To test the chart manually without Fleet:
 
 **Status**:  
 - Fleet is unable to deploy the Helm chart.
-- **Issue**: The Fleet deployment fails with error "authentication required: Repository not found"
+- **Issue**: The Fleet deployment fails with error `"authentication required: Repository not found"`
 
 **Troubleshooting steps**:
 1. kubectl get bundles.fleet.cattle.io -A
