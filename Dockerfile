@@ -1,3 +1,4 @@
+# Define base image
 FROM python:3.14-slim
 
 # 1. Install system-wide dependencies as root
