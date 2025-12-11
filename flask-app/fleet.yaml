@@ -1,0 +1,8 @@
+# helm/flask-app/fleet.yaml
+defaultNamespace: fleet
+
+helm:
+  # no repo here – local chart
+  chart: "."            # or omit; chart is at this directory
+  values:
+    replicaCount: 2
