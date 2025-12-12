@@ -95,6 +95,13 @@ To test the chart manually without Fleet:
 - helm repo update
 - helm -n cattle-fleet-system install --create-namespace --wait fleet fleet/fleet
 
+### Deploy using Fleet
+- Install Fleet CLI in workstattion
+- Clone https://github.com/amey2025/flask.git 
+- cd flask/
+- `fleet apply flask-app k8s/` to deploy raw Kubernetes manifest using Fleet
+- `fleet apply flask-app flask-app/` to deploy the Helm chart using Fleet
+- To delete the deployment use command `kubectl delete deployment flask --namespace fleet`
 
 ### Useful Fleet commands
 - Check the status of the GitRepo
@@ -115,15 +122,15 @@ To test the chart manually without Fleet:
 
 ---
 
-## Known Issues / Blockers
+~~## Known Issues / Blockers~~
 
-**Status**:  
-- Fleet is unable to deploy the Helm chart.
-- **Issue**: The Fleet deployment fails with error `"authentication required: Repository not found"`
+~~**Status**:~~
+~~- Fleet is unable to deploy the Helm chart.~~
+~~- **Issue**: The Fleet deployment fails with error `"authentication required: Repository not found"`~~
 
-**Troubleshooting steps**:
-1. kubectl get bundles.fleet.cattle.io -A
-2. kubectl describe gitrepo flask -n fleet-local
-3. Review Fleet agent logs from k9s tool
+~~**Troubleshooting steps**:~~
+~~1. kubectl get bundles.fleet.cattle.io -A~~
+~~2. kubectl describe gitrepo flask -n fleet-local~~
+~~3. Review Fleet agent logs from k9s tool~~
 
 
